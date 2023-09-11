@@ -1,0 +1,49 @@
+{
+  "name": "@mavvy/m3-ui",
+  "version": "0.0.1",
+  "description": "Material 3 UI React and Tailwind",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" ",
+    "build": "rollup -c",
+    "dev": "nodemon"
+  },
+  "keywords": [
+    "react",
+    "tailwind",
+    "nextjs",
+    "apollo",
+    "ui",
+    "component"
+  ],
+  "author": "Marc Jeric Espiritu <mavvystudio@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "nodemon": "^2.0.22",
+    "postcss": "^8.4.23",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rollup": "^3.20.2",
+    "rollup-plugin-dts": "^5.3.0",
+    "tailwindcss": "^3.3.2",
+    "tslib": "~2.4",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "files": [
+    "preset.js",
+    "dist"
+  ]
+}
