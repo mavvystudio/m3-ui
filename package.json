@@ -1,6 +1,6 @@
 {
   "name": "@mavvy/m3-ui",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Material 3 UI React and Tailwind",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -47,6 +47,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mavvy22/m3-ui"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "files": [
     "preset.js",
