@@ -42,6 +42,7 @@ module.exports = {
 * [Chip](#chip)
 * [CircularProgress](#circular-progress)
 * [Dialog](#dialog)
+* [Divider](#divider)
 * [Icon](#icon)
 * [LinearProgress](#linear-progress)
 * [Menu](#menu)
@@ -166,6 +167,13 @@ module.exports = {
 |cardClassName|applies the className to the Card component of the dialog|
 
 [Material 3 Dialog Reference](https://m3.material.io/components/dialogs/overview)
+
+### Divider
+
+|prop|type|description|
+|----|----|-----------|
+|none|||
+
 
 ### Icon
 
