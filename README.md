@@ -42,6 +42,7 @@ module.exports = {
 * [Chip](#chip)
 * [CircularProgress](#circular-progress)
 * [Dialog](#dialog)
+* [Icon](#icon)
 * [LinearProgress](#linear-progress)
 * [Menu](#menu)
 * [Radio](#radio-button)
@@ -50,6 +51,7 @@ module.exports = {
 * [Snackbar](#snackbar)
 * [Select](#select)
 * [Switch](#switch)
+* [Text](#text)
 * [Textfield](#textfield)
 * [Tooltip](#tooltip)
 * [TopAppBar](#top-app-bar)
@@ -165,6 +167,17 @@ module.exports = {
 
 [Material 3 Dialog Reference](https://m3.material.io/components/dialogs/overview)
 
+### Icon
+
+|prop|type|description|
+|----|----|-----------|
+|children|string|icon name of the google material icon|
+|variant|outlined\|rounded\|sharp|variant of the icon|
+|color|[Color](#color)|icon color|
+|size|[Size](#size)|size of the chip component|
+|filled|boolean|if true, will be displayed as a fileld icon|
+|fontVariant|[TextVariant](#text-variant)|variant to apply|
+
 ### Linear Progress
 
 |prop|type|description|
@@ -217,20 +230,105 @@ module.exports = {
 
 [Material 3 Menu Reference](https://m3.material.io/components/radio-button/overview)
 
-
 ### Select
+
+Extends [TextField Props](#Textfield)
+
+|prop|type|description|
+|----|----|-----------|
+|options|{text: string, value: any}[]|array of option item to display on the dropdown list|
+|autoComplete|boolean|if true, will apply auto complete feature|
+|top|boolean|if true, show the dropdown list at the top of the component|
+|ItemComponent|React Component|Renders a custom component for each item on the list|
+|disableRemoveOverflow|boolean|default behaviour is to add an overflow class to the body, set if to true to disable it|
+|noOptionText|string|if list is empty, show this text|
 
 ### Side Sheet
 
+|prop|type|description|
+|----|----|-----------|
+|open|boolean|required. if true, show the side sheet|
+|onClose|() => void|required. on close handler|
+|closeDelay|number|in ms. the delay before closeing the sidesheet|
+
+[Material 3 SideSheet Reference](https://m3.material.io/components/side-sheets/overview)
+
+
 ### Snackbar
+
+|prop|type|description|
+|----|----|-----------|
+|open|boolean|required. if true, show the snackbar|
+|onClose|() => void|required. on close handler|
+|color|[Color](#color)|component color|
+|accentColor|[Color](#color)|component accent color|
+|duration|number|in ms. duration to show the snackbar|
+|centered|boolean|if true, will center the snackbar horizontally|
+|showCloseIcon|boolean|if true, shows a close icon button|
+|action|{text:string, fn: () => void}}|render an action text button|
+
+[Material 3 Snackbar Reference](https://m3.material.io/components/snackbar/overview)
+
 
 ### Switch
 
+|prop|type|description|
+|----|----|-----------|
+|selected|boolean|required. if true will show a selected state|
+|onClick|(event)=>void|on click handler|
+|label|string|switch component label|
+|color| [color](#color)|switch component color|
+|disabled|boolean|if true, disables the switch component|
+|activeIcon|string|icon name to display if the state is selected|
+|inactiveIcon|string|icon name to display if the state is not selected|
+|activeIconProps|IconProps|props of the Icon Component of the active icon|
+|inactiveIconProps|IconProps|props of the Icon Component of the inactive icon|
+
+[Material 3 Switch Reference](https://m3.material.io/components/switch/overview)
+
+### Text
+
+|prop|type|description|
+|----|----|-----------|
+|children|string|text|
+|color| [color](#color)|text component color|
+|attrs|Object|any html attributes to apply|
+|component|string|html tag to render|
+|size|[Size](#size)|size of the text component|
+|variant|[TextVariant](#text-variant)|variant to apply|
+|style|Object|style props|
+|className|string|className of the component|
+
 ### Textfield
+|prop|type|description|
+|----|----|-----------|
+
 
 ### Tooltip
 
+|prop|type|description|
+|----|----|-----------|
+|text|string|required. tooltip text|
+|children|React.ReactNode|required. tootlip to attach on|
+|yPosition|top\|bottom\|center|tooltip position on y axis|
+|xPosition|left\|right\|center|tooltip position on x axis|
+|className|string|className of the Tooltip component|
+|contentClassName|string|className of the Text component container|
+|textClassName|string|className of the Text Component|
+
+[Material 3 Tooltip Reference](https://m3.material.io/components/tooltips/overview)
+
 ### Top App Bar
+
+|prop|type|description|
+|----|----|-----------|
+|color| [color](#color)|text component color|
+|variant|small\|medium\|large\|ceter|app bar variant|
+|className|string|className of the Top App Bar component|
+|children|React.ReactNode|children component|
+
+[Material 3 Top App Bar Reference](https://m3.material.io/components/top-app-bar/overview)
+
 
 ## Types
 
@@ -277,5 +375,13 @@ sharp
 small
 medium
 large
+```
 
+### Text Variant
+```bash
+display
+headline
+title
+label
+body
 ```
