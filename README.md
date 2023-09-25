@@ -302,6 +302,44 @@ Extends [TextField Props](#Textfield)
 ### Textfield
 |prop|type|description|
 |----|----|-----------|
+|onChange|(value: string\|number\|boolean) => void|required. onChange handler|
+|label|string|textfield label|
+|value|string\|number\|boolean|value of the textfield|
+|type|string|HTMLInputTypeAttribute|
+|attrs|Object|html attributes for the input element|
+|onKeyDown|(event) => void| onKeyDown event handler|
+|onKeyUp|(event) => void| onKeyUp event handler|
+|onFocus|(event) => void| onFocus event handler|
+|onBlur|(event) => void| onBlur event handler|
+|className|string|className of the Textfield component|
+|contentClassName|string|className of the container component of the input element|
+|inputClassName|string|className of the input element|
+|labelClassName|string|className of the label|
+|variant|outlined\|fileld|Textfield variant|
+|color| [color](#color)|component color|
+|disabled|boolean|if true, component will be disabled|
+|multiple|boolean|for input type file to handle multiple selection|
+|placeholder|string|placeholder of the input element|
+|icon|string|icon to display|
+|iconVariant|[Icon Variant](#icon-variant)| variant of the icon|
+|iconClassName|string|className of the Icon component|
+|size|[Size](#size)|size of the Textfield component|
+|error|boolean|if true, shows an error state|
+|supportingText|string| supporting text below the input element|
+|supportingTextClassName|string|className of the supportingText Text Component|
+|showClearButton|boolean|if true, shows a clear button|
+|clearIconClassName|string|className of the Clear IconButton|
+|trailingIcon|string|icon name of the trailing icon|
+|onClear|(value: string\|number\|boolean) => void| on clear handler|
+|outlineClassName|string|className of the outline component|
+|prefix|string|render a prefix text|
+|suffix|string|render a suffix text|
+|FieldComponent|Function|Render a Field component aside from the input element|
+|options|any|pass the options to the FieldComponent|
+|endAdornment|(props: {focused:boolean}) => JSX Component| end Adornment to render|
+|startAdornment|Raect.ReactNode|start Adornment to render|
+
+[Material 3 Textfield Reference](https://m3.material.io/components/text-fields/overview)
 
 
 ### Tooltip
