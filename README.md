@@ -376,6 +376,8 @@ Extends [TextField Props](#Textfield)
 [Material 3 Top App Bar Reference](https://m3.material.io/components/top-app-bar/overview)
 
 ## CSS Variables
+
+```bash
 --color-primary
 --color-primary-light
 --color-primary-dark
@@ -408,6 +410,8 @@ Extends [TextField Props](#Textfield)
 --color-scrim
 --color-inverse-surface
 --color-on-inverse-surface
+```
+
 ## Types
 
 ### Color
