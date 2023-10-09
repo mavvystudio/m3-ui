@@ -375,7 +375,39 @@ Extends [TextField Props](#Textfield)
 
 [Material 3 Top App Bar Reference](https://m3.material.io/components/top-app-bar/overview)
 
-
+## CSS Variables
+--color-primary
+--color-primary-light
+--color-primary-dark
+--color-on-primary
+--color-primary-container
+--color-on-primary-container
+--color-secondary
+--color-secondary-light
+--color-on-secondary
+--color-secondary-container
+--color-on-secondary-container
+--color-tertiary
+--color-on-tertiary
+--color-tertiary-container
+--color-on-tertiary-container
+--color-surface-container-low
+--color-surface-container-lowest
+--color-surface-container
+--color-surface-container-high
+--color-surface-container-highest
+--color-on-surface-container-highest
+--color-on-surface
+--color-on-surface-variant
+--color-outline
+--color-outline-variant
+--color-error
+--color-on-error
+--color-error-container
+--color-on-error-container
+--color-scrim
+--color-inverse-surface
+--color-on-inverse-surface
 ## Types
 
 ### Color
