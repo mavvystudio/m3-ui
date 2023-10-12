@@ -16,7 +16,9 @@ Make sure you already setup your tailwind on your app
 
 [Install Tailwind](https://tailwindcss.com/docs/guides/create-react-app)
 
-### Configuration for tailwind.config
+### Configuration
+
+tailwind.config.ts
 
 ```javascript
 const preset = require('@mavvy/m3-ui/preset');
@@ -30,6 +32,30 @@ module.exports = {
   plugins: [],
   presets: [preset],
 };
+```
+
+globals.css
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 77 152 41;
+    --icon-font-family: Material Symbols Outlined;
+  }
+}
+```
+
+html
+```html
+<head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet"
+  />
+</head>
 ```
 
 
