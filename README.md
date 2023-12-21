@@ -103,7 +103,6 @@ html
 |variant|outlined\|elevated\|filled\|text\|fab|button variant. default text|
 |size|small\|medium\|large| button size. default text
 |color| [color](#color)|button color|
-|activeColor| [color](#color)|button color when it's active|
 |disabled|boolean|disables the button|
 |vertical|boolean|arrangement of icon and button text on y axis|
 |reversed|boolean|if true - reversed ararngement of icon and text|

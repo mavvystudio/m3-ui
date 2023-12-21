@@ -38,7 +38,7 @@ export const Badge = (props: BadgeProps) => {
       {props.show && (
         <div className={contentCls}>
           {hasNum && (
-            <Text color="on-error" size="small">
+            <Text component="span" color="on-error" size="small">
               {getNum(props.value!, props.max)}
             </Text>
           )}
