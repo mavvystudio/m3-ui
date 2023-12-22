@@ -53,11 +53,6 @@ export const Checkbox = ({
       className={`m3-checkbox flex cursor-pointer items-center ${className}`}
       onClick={handleClick}
     >
-      {hasLabel && (
-        <Text component={props.textComponent} className={props.textClassName}>
-          {props.label}
-        </Text>
-      )}
       <Button
         iconClassName={`m3-checkbox-icon text-xl transition-none ${iconCls} ${iconClassName}`}
         color={color}
@@ -75,6 +70,11 @@ export const Checkbox = ({
         disabled={disabled}
         iconButton
       />
+      {hasLabel && (
+        <Text component={props.textComponent} className={props.textClassName}>
+          {props.label}
+        </Text>
+      )}
     </div>
   );
 };
