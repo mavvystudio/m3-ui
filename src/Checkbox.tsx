@@ -50,7 +50,7 @@ export const Checkbox = ({
 
   return (
     <div
-      className={`m3-checkbox flex cursor-pointer items-center self-start ${className}`}
+      className={`m3-checkbox flex cursor-pointer items-center ${className}`}
       onClick={handleClick}
     >
       {hasLabel && (
