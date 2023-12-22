@@ -139,12 +139,15 @@ html
 |color|[Color](#color)|component color|
 |checked|boolean|required. if true, shows a checked state|
 |onChange|(checked: boolean) => void|required. handler for change event|
-|className|string| className of the component|
-|iconClassName|string|className for the icon|
-|name|string|name attribute for the input element|
-|disabled|boolean|disables the checkbox|
-|error|boolean|if true, shows an error state|
-|indeterminate|boolean|if true, shows an indeterminate state|
+|label|string?|checkbox label|
+|textComponent|string?|text component to render|
+|textClassName|string?|text className|
+|className|string?| className of the component|
+|iconClassName|string?|className for the icon|
+|name|string?|name attribute for the input element|
+|disabled|boolean?|disables the checkbox|
+|error|boolean?|if true, shows an error state|
+|indeterminate|boolean?|if true, shows an indeterminate state|
 
 [Material 3 Checkbox Reference](https://m3.material.io/components/checkbox/overview)
 

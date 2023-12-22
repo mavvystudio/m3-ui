@@ -1,4 +1,5 @@
 import Button from './Button';
+import Text from './Text';
 import { Color } from './types';
 
 export type CheckboxProps = {
@@ -11,6 +12,9 @@ export type CheckboxProps = {
   disabled?: boolean;
   error?: boolean;
   indeterminate?: boolean;
+  label?: string;
+  textClassName?: string;
+  textComponent?: string;
 };
 
 const handleColor = (checked: boolean, color?: Color, error?: boolean) => {
@@ -33,6 +37,7 @@ export const Checkbox = ({
 }: CheckboxProps) => {
   const icon = handleIcon(props.checked, props.indeterminate);
   const color = handleColor(props.checked, props.color, props.error);
+  const hasLabel = Boolean(props.label);
 
   const handleClick = () => {
     props.onChange(!props.checked);
@@ -41,25 +46,33 @@ export const Checkbox = ({
   const iconCls = props.checked ? 'm3-icon-filled' : '';
 
   return (
-    <Button
-      className={`self-start ${className}`}
-      iconClassName={`text-xl transition-none ${iconCls} ${iconClassName}`}
-      color={color}
+    <div
+      className={`m3-checkbox flex cursor-pointer items-center self-start ${className}`}
       onClick={handleClick}
-      icon={icon}
-      RenderComponent={
-        <input
-          onChange={() => {}}
-          type="checkbox"
-          checked={props.checked}
-          name={props.name}
-          className="absolute opacity-0 pointer-events-none"
-          disabled={disabled}
-        />
-      }
-      disabled={disabled}
-      iconButton
-    />
+    >
+      {hasLabel && (
+        <Text component={props.textComponent} className={props.textClassName}>
+          {props.label}
+        </Text>
+      )}
+      <Button
+        iconClassName={`m3-checkbox-icon text-xl transition-none ${iconCls} ${iconClassName}`}
+        color={color}
+        icon={icon}
+        RenderComponent={
+          <input
+            onChange={() => {}}
+            type="checkbox"
+            checked={props.checked}
+            name={props.name}
+            className="m3-checkbox-input absolute opacity-0 pointer-events-none"
+            disabled={disabled}
+          />
+        }
+        disabled={disabled}
+        iconButton
+      />
+    </div>
   );
 };
 
