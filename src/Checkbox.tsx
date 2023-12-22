@@ -40,6 +40,9 @@ export const Checkbox = ({
   const hasLabel = Boolean(props.label);
 
   const handleClick = () => {
+    if (disabled) {
+      return undefined;
+    }
     props.onChange(!props.checked);
   };
 
