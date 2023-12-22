@@ -47,10 +47,11 @@ export const Checkbox = ({
   };
 
   const iconCls = props.checked ? 'm3-icon-filled' : '';
+  const cursor = disabled ? 'cursor-not-allowed' : 'cursor-pointer';
 
   return (
     <div
-      className={`m3-checkbox flex cursor-pointer items-center ${className}`}
+      className={`m3-checkbox flex ${cursor} items-center ${className}`}
       onClick={handleClick}
     >
       <Button
