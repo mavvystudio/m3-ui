@@ -24,16 +24,26 @@ export const Presentation = ({
 
   useEffect(() => {
     if (props.open === false) {
+      if (
+        !props.disableRemoveOverflow &&
+        document.body.classList.contains('!overflow-hidden')
+      ) {
+        document.body.classList.remove('!overflow-hidden');
+      }
+
+      if (el && el.parentElement) {
+        document.body.removeChild(el);
+      }
       return undefined;
     }
 
     document.body.classList.add('!overflow-hidden');
 
-    const el = document.createElement('div');
+    const l = document.createElement('div');
 
-    setEl(el);
+    setEl(l);
 
-    document.body.append(el);
+    document.body.append(l);
   }, [props.open]);
 
   const handleClose = async () => {
