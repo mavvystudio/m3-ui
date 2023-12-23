@@ -36,7 +36,7 @@ export const Menu = ({
   const cardEl = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const btnContainerEl = useRef<HTMLDivElement>(null);
-  const menuList = `m3-menu-list animate-dropdown opacity-0 origin-top absolute flex flex-col items-start z-50 !rounded-lg !px-0 ${menuListClassName}`;
+  const menuList = `m3-menu-list animate-dropdown opacity-0 origin-top fixed flex flex-col items-start z-50 !rounded-lg !px-0 ${menuListClassName}`;
   const itemCls = `m3-menu-item w-full px-3 py-2 gap-x-2 flex items-center cursor-pointer hover:bg-on-surface/10 ${itemClassName} [&.active]:bg-on-surface/20 text-on-surface`;
 
   const style = useMemo(() => {
