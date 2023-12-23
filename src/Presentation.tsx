@@ -27,7 +27,7 @@ export const Presentation = ({
       return undefined;
     }
 
-    document.body.classList.add('overflow-hidden');
+    document.body.classList.add('!overflow-hidden');
 
     const el = document.createElement('div');
 
@@ -40,7 +40,7 @@ export const Presentation = ({
     await props.onClose();
 
     if (!props.disableRemoveOverflow) {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove('!overflow-hidden');
     }
 
     if (el && el.parentElement) {

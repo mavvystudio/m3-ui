@@ -82,6 +82,7 @@ export const Menu = ({
         disableRemoveOverflow={props.disableRemoveOverflow}
         backdropClassName="!bg-transparent"
         open={isOpen}
+        className="!fixed"
       >
         <Card ref={cardEl} style={style} className={menuList}>
           {items.map((item, index) => {
