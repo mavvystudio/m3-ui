@@ -149,7 +149,7 @@ const SelectFieldComponent = (props: FieldComponentProps) => {
       </div>
 
       <Presentation
-        backdropClassName={`!bg-transparent ${bdCls}`}
+        backdropClassName={`!bg-transparent !fixed ${bdCls}`}
         onClose={handleClose}
         open={Boolean(showEl)}
         disableRemoveOverflow={props.options.disableRemoveOverflow}
