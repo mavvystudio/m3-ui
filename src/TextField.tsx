@@ -295,7 +295,7 @@ export const TextField = ({
         <PrefixSuffix variant="suffix" value={props.suffix} />
         {isOutlined && (
           <fieldset
-            className={`border-outline ${focusBorderColor} group-hover:border-on-surface absolute group-[.focused]:border-2 group-[.focused]:outline-input-active group-[.has-value]:visible pointer-events-none w-full inset-0 top-[-5px] border rounded-md py-0 px-2 group-[.disabled]:border-on-surface/10 group-[.has-error]:border-error ${outlineClassName}`}
+            className={`break-normal border-outline ${focusBorderColor} group-hover:border-on-surface absolute group-[.focused]:border-2 group-[.focused]:outline-input-active group-[.has-value]:visible pointer-events-none w-full inset-0 top-[-5px] border rounded-md py-0 px-2 group-[.disabled]:border-on-surface/10 group-[.has-error]:border-error ${outlineClassName}`}
           >
             <legend className="invisible w-0 overflow-hidden">
               <span>{props.label}</span>

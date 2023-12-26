@@ -17,7 +17,11 @@ const SelectValueInput = (props: {
   }, [props.value]);
 
   if (!props.autoComplete) {
-    return <Text className="w-full">{props.value}</Text>;
+    return (
+      <Text component="span" className="w-full">
+        {props.value}
+      </Text>
+    );
   }
   if (props.autoComplete) {
     return (

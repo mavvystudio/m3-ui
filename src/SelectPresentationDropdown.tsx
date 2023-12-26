@@ -39,6 +39,7 @@ const SelectPresentationDropdown = forwardRef(function SP(
   useImperativeHandle(ref, () => {
     return {
       focusList: () => {
+        console.log('firstChild focus');
         ulEl.current.firstChild.focus();
       },
       hide: () => {
@@ -56,6 +57,10 @@ const SelectPresentationDropdown = forwardRef(function SP(
       const getIndex = props.options.findIndex(
         (item) => item.value === props.value,
       );
+
+      if (getIndex !== props.selectedIndex) {
+        props.setSelectedIndex(getIndex);
+      }
 
       ulEl.current.children[getIndex].focus();
     }

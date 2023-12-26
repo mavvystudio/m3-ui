@@ -25,8 +25,6 @@ export type FieldComponentProps = {
   };
 };
 
-const portalId = 'm3-ui-select-presentation';
-
 const SelectFieldComponent = (props: FieldComponentProps) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [showEl, setShowEl] = useState<HTMLElement | null>(null);
@@ -53,16 +51,6 @@ const SelectFieldComponent = (props: FieldComponentProps) => {
   const handleShow = (
     event: React.KeyboardEvent | React.MouseEvent<HTMLDivElement, MouseEvent>,
   ) => {
-    const div = (() => {
-      const d = document.getElementById(portalId);
-      if (d) {
-        return d as HTMLDivElement;
-      }
-      return document.createElement('div');
-    })();
-    div.setAttribute('id', portalId);
-    document.body.append(div);
-
     props.propsData.onFocus();
 
     setShowEl(event.currentTarget.parentElement!.parentElement!.parentElement!);
