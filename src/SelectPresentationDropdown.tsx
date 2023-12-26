@@ -39,7 +39,6 @@ const SelectPresentationDropdown = forwardRef(function SP(
   useImperativeHandle(ref, () => {
     return {
       focusList: () => {
-        console.log('firstChild focus');
         ulEl.current.firstChild.focus();
       },
       hide: () => {
