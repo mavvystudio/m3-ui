@@ -82,7 +82,13 @@ export const Chip = ({
         </Icon>
       )}
 
-      <Text color={txtColor} size="large" variant="label" className={txtCls}>
+      <Text
+        component="span"
+        color={txtColor}
+        size="large"
+        variant="label"
+        className={txtCls}
+      >
         {props.children}
       </Text>
       {hasTrailingIcon && (
