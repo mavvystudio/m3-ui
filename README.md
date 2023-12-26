@@ -2,7 +2,7 @@
 
 Material 3 design system  for React and Tailwind
 
-**Active Development and Bug Fixing**
+**Still on Active Development**
 
 ## Setup
 
