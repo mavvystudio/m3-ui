@@ -384,7 +384,12 @@ function PrefixSuffix(props: { value?: string; variant: 'prefix' | 'suffix' }) {
   const pl = props.variant === 'prefix' ? 'pl-3' : 'pr-3';
   return (
     <div className={`flex flex-col justify-center items-center ${pl}`}>
-      <Text color="on-surface-variant" size="medium" variant="body">
+      <Text
+        component="span"
+        color="on-surface-variant"
+        size="medium"
+        variant="body"
+      >
         {props.value}
       </Text>
     </div>

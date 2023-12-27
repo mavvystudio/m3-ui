@@ -101,7 +101,7 @@ export const Menu = ({
                 key={index}
               >
                 {hasLeadingIcon && <Icon>{item.leadingIcon}</Icon>}
-                <Text>{item.text}</Text>
+                <Text component="span">{item.text}</Text>
                 {hasTrailingIcon && <Icon>{item.trailingIcon}</Icon>}
               </div>
             );
