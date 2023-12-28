@@ -17,7 +17,7 @@ const createRootCls = ({ containerClasName = '' }: BadgeProps) => {
 
 const createContentCls = ({ className = '', size = 'small' }: BadgeProps) => {
   const cls =
-    'm3-badge z-50 bg-error absolute rounded-full right-0 top-[-4px] flex justify-center items-center';
+    'm3-badge z-50 bg-error absolute z-[1] rounded-full right-0 top-[-4px] flex justify-center items-center';
   const sizes = {
     small: 'w-[6px] h-[6px]',
     large: 'min-w-[16px] h-[16px] px-1 translate-x-[50%]',
