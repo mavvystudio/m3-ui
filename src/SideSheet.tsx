@@ -25,7 +25,7 @@ export const SideSheet = (props: SideSheetProps) => {
 
   return (
     <Presentation
-      className="flex justify-end"
+      className="!fixed flex justify-end"
       open={props.open}
       onClose={handleClose}
     >
