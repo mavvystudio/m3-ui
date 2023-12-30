@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import Button from './Button';
 import { bg } from './css-classes';
-import Text from './Text';
 import { Color } from './types';
 
 export type SnackbarProps = {
@@ -51,7 +50,7 @@ export const Snackbar = (props: SnackbarProps) => {
 
   return (
     <div className={cls}>
-      <Text color={inverseColor as Color}>{props.children}</Text>
+      {props.children}
       <div className="flex">
         {hasAction && (
           <Button

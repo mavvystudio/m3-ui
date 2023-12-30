@@ -50,7 +50,11 @@ export const Tooltip = (props: TooltipProps) => {
     <div className={cls}>
       <div className={posCls}>
         <div className={contentCls}>
-          <Text className={props.textClassName} color="on-inverse-surface">
+          <Text
+            component="span"
+            className={props.textClassName}
+            color="on-inverse-surface"
+          >
             {props.text}
           </Text>
         </div>
