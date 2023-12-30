@@ -36,7 +36,9 @@ export const RadioButton = ({ className = '', ...props }: RadioButtonProps) => {
         selected={props.selected}
         disabled={props.disabled}
       />
-      <Text className={props.textClassName}>{props.label}</Text>
+      <Text component="span" className={props.textClassName}>
+        {props.label}
+      </Text>
     </div>
   );
 };
