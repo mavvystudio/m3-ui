@@ -149,6 +149,8 @@ module.exports = {
         'on-surface-container-highest':
           'rgb(var(--color-on-surface-container-highest) / <alpha-value>)',
 
+        'surface-bright': 'rgb(var(--color-surface-bright) / <alpha-value>)',
+        'surface-dim': 'rgb(var(--color-surface-dim) / <alpha-value>)',
         'on-surface': 'rgb(var(--color-on-surface) / <alpha-value>)',
         'on-surface-variant':
           'rgb(var(--color-on-surface-variant) / <alpha-value>)',
@@ -160,6 +162,7 @@ module.exports = {
         'on-error-container':
           'rgb(var(--color-on-error-container) / <alpha-value>)',
         scrim: 'rgb(var(--color-scrim) / <alpha-value>)',
+        shadow: 'rgb(var(--color-shadow) / <alpha-value>)',
         'inverse-surface': 'rgb(var(--color-inverse-surface) / <alpha-value>)',
         'on-inverse-surface':
           'rgb(var(--color-on-inverse-surface) / <alpha-value>)',
@@ -197,6 +200,8 @@ module.exports = {
           '--color-surface-container-high': '230 233 223',
           '--color-surface-container-highest': '224 227 218',
           '--color-on-surface-container-highest': '255 255 255',
+          '--color-surface-bright': '254 247 255',
+          '--color-surface-dim': '222 216 225',
           '--color-on-surface': '25 28 24',
           '--color-on-surface-variant': '67 72 62',
           '--color-outline': '116 121 109',
@@ -206,6 +211,7 @@ module.exports = {
           '--color-error-container': '255 218 214',
           '--color-on-error-container': '65 0 2',
           '--color-scrim': '31 31 31',
+          '--color-shadow': '0 0 0',
           '--color-inverse-surface': '49 48 51',
           '--color-on-inverse-surface': '244 239 244',
         },

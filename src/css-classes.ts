@@ -10,7 +10,8 @@ export const bg = {
   tertiary: 'bg-tertiary',
   'on-tertiary': 'bg-on-tertiary',
   'tertiary-container': 'bg-tertiary-container',
-
+  'surface-bright': 'bg-surface-bright',
+  'surface-dim': 'bg-surface-dim',
   'surface-container-lowest': 'bg-surface-container-lowest',
   'surface-container-low': 'bg-surface-container-low',
   'surface-container': 'bg-surface-container',
@@ -55,6 +56,9 @@ export const groupHoverBorderColor: typeof bg = {
   'on-surface': 'group-hover:border-on-surface',
   'on-surface-variant': 'group-hover:border-on-surface-variant',
 
+  'surface-bright': 'group-hover:border-surface-bright',
+  'surface-dim': 'group-hover:border-surface-dim',
+
   outline: 'group-hover:border-outline',
   'outline-variant': 'group-hover:border-outline-variant',
 
@@ -82,6 +86,8 @@ export const groupFocusBorderColor: typeof bg = {
   'on-tertiary': 'group-[.focused]:border-on-tertiary',
   'tertiary-container': 'group-[.focused]:border-tertiary-container',
 
+  'surface-bright': 'group-[.focused]:border-surface-bright',
+  'surface-dim': 'group-[.focused]:border-surface-dim',
   'surface-container-lowest':
     'group-[.focused]:border-surface-container-lowest',
   'surface-container-low': 'group-[.focused]:border-surface-container-low',
@@ -120,6 +126,8 @@ export const peerHoverBorderColor: typeof bg = {
   'on-tertiary': 'peer-hover:border-on-tertiary',
   'tertiary-container': 'peer-hover:border-tertiary-container',
 
+  'surface-bright': 'peer-hover:border-surface-bright',
+  'surface-dim': 'peer-hover:border-surface-dim',
   'surface-container-lowest': 'peer-hover:border-surface-container-lowest',
   'surface-container-low': 'peer-hover:border-surface-container-low',
   'surface-container': 'peer-hover:border-surface-container',
@@ -155,6 +163,8 @@ export const peerFocusBorderColor: typeof bg = {
   'on-tertiary': 'peer-focus:border-on-tertiary',
   'tertiary-container': 'peer-focus:border-tertiary-container',
 
+  'surface-bright': 'peer-focus:border-surface-bright',
+  'surface-dim': 'peer-focus:border-surface-dim',
   'surface-container-lowest': 'peer-focus:border-surface-container-lowest',
   'surface-container-low': 'peer-focus:border-surface-container-low',
   'surface-container': 'peer-focus:border-surface-container',
@@ -190,6 +200,8 @@ export const borderColors: typeof bg = {
   'on-tertiary': 'border-on-tertiary',
   'tertiary-container': 'border-tertiary-container',
 
+  'surface-bright': 'border-surface-bright',
+  'surface-dim': 'border-surface-dim',
   'surface-container-lowest': 'border-surface-container-lowest',
   'surface-container-low': 'border-surface-container-low',
   'surface-container': 'border-surface-container',
@@ -225,6 +237,8 @@ export const activeBg: typeof bg = {
   'on-tertiary': 'active:bg-on-tertiary',
   'tertiary-container': 'active:bg-tertiary-container',
 
+  'surface-bright': 'active:bg-surface-bright',
+  'surface-dim': 'active:bg-surface-dim',
   'surface-container-lowest': 'active:bg-surface-container-lowest',
   'surface-container-low': 'active:bg-surface-container-low',
   'surface-container': 'active:bg-surface-container',
@@ -260,6 +274,8 @@ export const textColor: typeof bg = {
   'on-tertiary': 'text-on-tertiary',
   'tertiary-container': 'text-tertiary-container',
 
+  'surface-bright': 'text-surface-bright',
+  'surface-dim': 'text-surface-dim',
   'surface-container-lowest': 'text-surface-container-lowest',
   'surface-container-low': 'text-surface-container-low',
   'surface-container': 'text-surface-container',
@@ -295,6 +311,8 @@ export const groupFocusTextColor: typeof bg = {
   'on-tertiary': 'group-[.focused]:text-on-tertiary',
   'tertiary-container': 'group-[.focused]:text-tertiary-container',
 
+  'surface-bright': 'group-[.focused]:text-surface-bright',
+  'surface-dim': 'group-[.focused]:text-surface-dim',
   'surface-container-lowest': 'group-[.focused]:text-surface-container-lowest',
   'surface-container-low': 'group-[.focused]:text-surface-container-low',
   'surface-container': 'group-[.focused]:text-surface-container',
@@ -331,6 +349,8 @@ export const peerFocusTextColor: typeof bg = {
   'on-tertiary': 'peer-focus:text-on-tertiary',
   'tertiary-container': 'peer-focus:text-tertiary-container',
 
+  'surface-bright': 'peer-focus:text-surface-bright',
+  'surface-dim': 'peer-focus:text-surface-dim',
   'surface-container-lowest': 'peer-focus:text-surface-container-lowest',
   'surface-container-low': 'peer-focus:text-surface-container-low',
   'surface-container': 'peer-focus:text-surface-container',
@@ -365,6 +385,8 @@ export const stroke: typeof bg = {
   'on-tertiary': 'stroke-on-tertiary',
   'tertiary-container': 'stroke-tertiary-container',
 
+  'surface-bright': 'stroke-surface-bright',
+  'surface-dim': 'stroke-surface-dim',
   'surface-container-lowest': 'stroke-surface-container-lowest',
   'surface-container-low': 'stroke-surface-container-low',
   'surface-container': 'stroke-surface-container',

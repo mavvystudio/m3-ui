@@ -16,6 +16,8 @@ export type Color =
   | 'on-surface'
   | 'on-surface-variant'
   | 'surface-container'
+  | 'surface-bright'
+  | 'surface-dim'
   | 'outline'
   | 'outline-variant'
   | 'success'
