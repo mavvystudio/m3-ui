@@ -55,7 +55,7 @@ export const Snackbar = (props: SnackbarProps) => {
         {hasAction && (
           <Button
             className="!min-w-0"
-            color={props.accentColor}
+            color={props.accentColor || 'on-primary'}
             onClick={props.action?.fn}
           >
             {props.action?.text}

@@ -7,6 +7,7 @@ export type SideSheetProps = {
   open: boolean;
   onClose: () => void;
   closeDelay?: number;
+  className?: string;
 };
 
 export const SideSheet = (props: SideSheetProps) => {
@@ -31,7 +32,9 @@ export const SideSheet = (props: SideSheetProps) => {
     >
       <div
         ref={contentRef}
-        className="animate-fade-in-right h-full bg-surface-container z-[89]"
+        className={`m3-sidesheet animate-fade-in-right h-full bg-surface-container z-[89] ${
+          props.className || ''
+        }`}
       >
         <div className="flex justify-end">
           <Button onClick={handleClose} icon="close" iconButton />
