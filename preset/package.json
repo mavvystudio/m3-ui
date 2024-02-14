@@ -1,0 +1,5 @@
+{
+  "name": "@mavvy/m3-ui/preset",
+  "main": "index.js",
+  "types": "index.d.ts"
+}

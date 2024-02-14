@@ -53,10 +53,13 @@
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "preset.js",
     "dist",
     "src"
   ],
+  "exports": {
+    "./*": "./src/*.tsx",
+    "./preset": "./preset/index.js"
+  },
   "release": {
     "branches": [
       "main"
