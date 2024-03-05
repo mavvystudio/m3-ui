@@ -54,7 +54,8 @@
   },
   "files": [
     "dist",
-    "src"
+    "src",
+    "preset"
   ],
   "exports": {
     "./*": "./src/*.tsx",
