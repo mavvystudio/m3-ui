@@ -36,6 +36,7 @@ export type ButtonProps = {
   selected?: boolean;
   selectable?: boolean;
   RenderComponent?: any;
+  type?: string;
 };
 
 const createButtonPaddingSize = (
