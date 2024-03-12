@@ -2,9 +2,8 @@
   "name": "@mavvy/m3-ui",
   "version": "1.1.24",
   "description": "Material 3 UI React and Tailwind",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/index.ts",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" ",
     "build": "rollup -c",
@@ -58,8 +57,8 @@
     "preset"
   ],
   "exports": {
-    "./*": "./src/*.tsx",
-    "./preset": "./preset/index.js"
+    "./preset": "./preset/index.js",
+    "./*": "./src/*.tsx"
   },
   "release": {
     "branches": [

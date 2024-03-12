@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./node_modules/@mavvy/m3-ui/dist/esm/index.js'],
+  content: ['./node_modules/@mavvy/m3-ui/dist/*.tsx'],
   // content: ['./node_modules/@mavvy/gerber/src/*.tsx'],
   theme: {
     extend: {
