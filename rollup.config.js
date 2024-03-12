@@ -42,7 +42,7 @@ const external = [
 const rollupConfigs = files.map((file) => ({
   input: file,
   output: {
-    file: `dist/${path.basename(file)}`, // Output to 'dist' directory with the same name
+    file: `dist/${path.basename(file).split('.')[0]}.js`, // Output to 'dist' directory with the same name
     format: 'es', // or 'cjs', 'umd', 'amd', 'iife',
     sourcemap: true,
   },

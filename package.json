@@ -3,7 +3,7 @@
   "version": "1.1.25",
   "description": "Material 3 UI React and Tailwind",
   "main": "dist/index.ts",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" ",
     "build": "rollup -c",
@@ -58,7 +58,7 @@
   ],
   "exports": {
     "./preset": "./preset/index.js",
-    "./*": "./src/*.tsx"
+    "./*": "./dist/*.js"
   },
   "release": {
     "branches": [
