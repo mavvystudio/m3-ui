@@ -31,8 +31,7 @@ module.exports = {
   theme: {
     extend: preset.theme.extend,
   },
-  plugins: [],
-  presets: [preset],
+  plugins: preset.plugins
 };
 ```
 
