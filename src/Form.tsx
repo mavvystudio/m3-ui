@@ -2,14 +2,16 @@ import { FormEvent } from 'react';
 import TextField from './TextField';
 import { Color } from './types';
 
+type Value = string | number | boolean;
+
 export type FormProps = {
   fields: {
     key: string;
     label?: string;
     type?: string;
   }[];
-  formValue: { [k: string]: string };
-  onChange: (newFormValue: any) => void;
+  value: { [k: string]: string };
+  onChange: (key: string, value: Value) => void;
   onSubmit: () => void;
   className?: string;
   color?: Color;
@@ -27,14 +29,11 @@ const Form = (props: FormProps) => {
   };
 
   const getValue = (key: string) => {
-    return props.formValue[key];
+    return props.value[key];
   };
 
-  const handleChange = (key: string, value: string | number | boolean) => {
-    props.onChange((data: any) => ({
-      ...data,
-      [key]: value,
-    }));
+  const handleChange = (key: string, value: Value) => {
+    props.onChange(key, value);
   };
 
   const cls = generateCls(props.className);
