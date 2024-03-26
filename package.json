@@ -1,6 +1,6 @@
 {
   "name": "@mavvy/m3-ui",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Material 3 UI React and Tailwind",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
