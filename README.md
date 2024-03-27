@@ -1,8 +1,10 @@
-# M3-UI - Material 3 React and Tailwind
+# M3-UI - Material 3 React and Tailwind (Beta)
 
-Material 3 design system  for React and Tailwind
+## Material Design at Its Core
 
-**Still on Active Development**
+Elevate your web development projects with M3-UI, a sleek and versatile React component library built on the foundations of Material Design.
+
+Highly customizable using CSS Variables or you can just simply add Tailwind css classes to the components!
 
 ## Setup
 
