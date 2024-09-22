@@ -1,31 +1,12 @@
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-import { DialogBase, DialogBaseProps } from './DialogBase';
+import { DialogBase, DialogBaseProps } from '../DialogBase';
+import { createEl } from './helpers';
+import { DIALOG_ELEMENT_ID } from './constants';
 
 export type DialogProps = DialogBaseProps & {
   open: boolean;
-};
-
-export const dialogElementId = 'm3-dialog-presentation';
-
-const createEl = () => {
-  document.body.classList.add('overflow-hidden');
-
-  const target = document.getElementById(dialogElementId);
-
-  if (target) {
-    return target;
-  }
-
-  const div = document.createElement('div');
-
-  div.setAttribute('id', dialogElementId);
-  div.setAttribute('class', 'fixed inset-0 z-40');
-
-  document.body.append(div);
-
-  return div;
 };
 
 export const Dialog = ({
@@ -33,18 +14,31 @@ export const Dialog = ({
   closeButtonClassName = '',
   cardClassName = '',
   position = 'center',
-  ...props
+  open,
+  title,
+  fullScreen,
+  disableBackdropClose,
+  children,
+  onClose,
 }: DialogProps) => {
-  // useImperativeHandle(ref, () => {});
+  useEffect(() => {
+    if (open === false) {
+      const target = document.getElementById(DIALOG_ELEMENT_ID);
+      document.body.classList.remove('overflow-hidden');
+      if (target) {
+        document.body.removeChild(target);
+      }
+    }
+  }, [open]);
 
   const el = useMemo(() => {
-    if (props.open) {
+    if (open) {
       return createEl();
     }
     return null;
-  }, [props.open]);
+  }, [open]);
 
-  if (!props.open || !el) {
+  if (!open || !el) {
     return null;
   }
 
@@ -52,23 +46,23 @@ export const Dialog = ({
     document.body.classList.remove('overflow-hidden');
     document.body.removeChild(el);
 
-    props.onClose();
+    onClose();
   };
 
   return (
     <>
       {createPortal(
         <DialogBase
-          title={props.title}
+          title={title}
           titleClassName={titleClassName}
-          fullScreen={props.fullScreen}
+          fullScreen={fullScreen}
           position={position}
           onClose={handleClose}
-          disableBackdropClose={props.disableBackdropClose}
+          disableBackdropClose={disableBackdropClose}
           closeButtonClassName={closeButtonClassName}
           cardClassName={cardClassName}
         >
-          {props.children}
+          {children}
         </DialogBase>,
         el,
       )}

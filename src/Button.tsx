@@ -1,4 +1,4 @@
-import { CSSProperties, forwardRef } from 'react';
+import { CSSProperties, PropsWithChildren } from 'react';
 
 import { ButtonVariant, Color, Size } from './types';
 import {
@@ -12,32 +12,31 @@ import { Icon, IconProps } from './Icon';
 import ButtonText from './ButtonText';
 import ButtonState from './ButtonState';
 
-export type ButtonProps = {
-  id?: string;
-  color?: Color;
-  activeColor?: Color;
-  size?: Size;
-  children?: React.ReactNode;
-  vertical?: boolean;
-  reversed?: boolean;
-  className?: string;
-  variant?: ButtonVariant;
-  style?: CSSProperties;
-  textClassName?: string;
-  iconClassName?: string;
-  stateClassName?: string;
-  disabled?: boolean;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  icon?: string;
-  iconVariant?: IconProps['variant'];
-  buttonAttrs?: any;
-  textAttrs?: any;
-  iconButton?: boolean;
-  selected?: boolean;
-  selectable?: boolean;
-  RenderComponent?: any;
-  type?: string;
-};
+export type ButtonProps = PropsWithChildren<
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    color?: Color;
+    activeColor?: Color;
+    size?: Size;
+    vertical?: boolean;
+    reversed?: boolean;
+    className?: string;
+    variant?: ButtonVariant;
+    style?: CSSProperties;
+    textClassName?: string;
+    iconClassName?: string;
+    stateClassName?: string;
+    disabled?: boolean;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    icon?: string;
+    iconVariant?: IconProps['variant'];
+    buttonAttrs?: any;
+    textAttrs?: any;
+    iconButton?: boolean;
+    selected?: boolean;
+    selectable?: boolean;
+    RenderComponent?: any;
+  }
+>;
 
 const createButtonPaddingSize = (
   props: ButtonProps,
@@ -147,69 +146,62 @@ const createVariantCls = (
 
 const cls =
   'm3-button gap-1.5 group transition-all duration-150 flex justify-center items-center';
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      variant = 'text',
-      size = 'medium',
-      textClassName = '',
-      iconClassName = '',
-      stateClassName = '',
-      className = '',
-      buttonAttrs = {},
-      textAttrs = {},
-      ...props
-    },
-    ref,
-  ) => {
-    const hasIcon = props.icon !== undefined;
-    const direction = getDirection(props.vertical, props.reversed);
-    const padding = createButtonPaddingSize(props, variant, size);
-    const radius = createRadius(props, variant, size);
-    const minWidth = props.iconButton ? '' : 'min-w-100';
-    const pos = variant === 'fab' ? 'absolute' : 'relative';
-    const buttonCls = `${cls} ${radius} ${padding} ${direction} ${pos} ${className} ${minWidth}`;
-    const renderedCls = createVariantCls(variant, props);
-    const containerCls = `${buttonCls} ${renderedCls}`;
-    const iconCls = `transition-all relative z-1 ${iconClassName}`;
+export const Button = ({
+  variant = 'text',
+  size = 'medium',
+  textClassName = '',
+  iconClassName = '',
+  stateClassName = '',
+  className = '',
+  buttonAttrs = {},
+  textAttrs = {},
+  ...props
+}: ButtonProps) => {
+  const hasIcon = props.icon !== undefined;
+  const direction = getDirection(props.vertical, props.reversed);
+  const padding = createButtonPaddingSize(props, variant, size);
+  const radius = createRadius(props, variant, size);
+  const minWidth = props.iconButton ? '' : 'min-w-100';
+  const pos = variant === 'fab' ? 'absolute' : 'relative';
+  const buttonCls = `${cls} ${radius} ${padding} ${direction} ${pos} ${className} ${minWidth}`;
+  const renderedCls = createVariantCls(variant, props);
+  const containerCls = `${buttonCls} ${renderedCls}`;
+  const iconCls = `transition-all relative z-1 ${iconClassName}`;
 
-    return (
-      <button
-        {...buttonAttrs}
-        id={props.id}
-        style={props.style}
-        className={containerCls}
-        disabled={props.disabled}
-        onClick={props.onClick}
-        ref={ref}
-      >
-        {hasIcon && (
-          <Icon
-            fontVariant="title"
-            size={size}
-            className={iconCls}
-            variant={props.iconVariant}
-          >
-            {props.icon}
-          </Icon>
-        )}
-        <ButtonText
-          className={textClassName}
+  return (
+    <button
+      {...buttonAttrs}
+      style={props.style}
+      className={containerCls}
+      disabled={props.disabled}
+      onClick={props.onClick}
+    >
+      {hasIcon && (
+        <Icon
+          fontVariant="title"
           size={size}
-          iconButton={props.iconButton}
+          className={iconCls}
+          variant={props.iconVariant}
         >
-          {props.children}
-        </ButtonText>
-        <ButtonState
-          radius={radius}
-          variant={variant}
-          color={props.color}
-          className={stateClassName}
-        />
-        {Boolean(props.RenderComponent) && props.RenderComponent}
-      </button>
-    );
-  },
-);
+          {props.icon}
+        </Icon>
+      )}
+      <ButtonText
+        className={textClassName}
+        size={size}
+        iconButton={props.iconButton}
+      >
+        {props.children}
+      </ButtonText>
+      <ButtonState
+        radius={radius}
+        variant={variant}
+        color={props.color}
+        className={stateClassName}
+      />
+      {Boolean(props.RenderComponent) && props.RenderComponent}
+    </button>
+  );
+};
 
 export default Button;

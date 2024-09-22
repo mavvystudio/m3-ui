@@ -1,6 +1,6 @@
 import { FormEvent } from 'react';
-import TextField from './TextField';
-import { Color } from './types';
+import TextField from '../TextField';
+import { Color } from '../types';
 
 type Value = string | number | boolean;
 

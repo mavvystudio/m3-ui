@@ -1,20 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es2019", 
-    "esModuleInterop": true, 
-    "forceConsistentCasingInFileNames": true,
-    "strict": true, 
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "declaration": true,   // Generate .d.ts files
+    "declarationDir": "./dist", 
+    "outDir": "./dist",    // Output compiled files
+    "esModuleInterop": true,
     "skipLibCheck": true,
-    "lib": ["es2019", "dom"],
-    "jsx": "react-jsx", 
-    "module": "ESNext",  
-    "declaration": true,
-    "declarationDir": "",
-    "sourceMap": true,
-    "outDir": "dist",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true
+    "strict": true,
+    "moduleResolution": "node"
   },
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"]
 }
