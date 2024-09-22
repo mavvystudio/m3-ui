@@ -14,12 +14,7 @@ export interface HeaderProps {
   onCreateAccount?: () => void;
 }
 
-export const Header = ({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-}: HeaderProps) => (
+export const Header = (props: HeaderProps) => (
   <header>
     <div className="mt-[300px] storybook-header">
       <div>
@@ -44,27 +39,7 @@ export const Header = ({
             />
           </g>
         </svg>
-        <h1>Acme</h1>
-      </div>
-      <div>
-        {user ? (
-          <>
-            <span className="welcome">
-              Welcome, <b>{user.name}</b>!
-            </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
-          </>
-        ) : (
-          <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button
-              primary
-              size="small"
-              onClick={onCreateAccount}
-              label="Sign up"
-            />
-          </>
-        )}
+        <h1>Acme {props.user?.name}</h1>
       </div>
     </div>
   </header>
