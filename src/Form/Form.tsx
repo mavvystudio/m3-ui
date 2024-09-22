@@ -21,7 +21,7 @@ const generateCls = (className?: string) => {
   return `flex flex-col gap-y-4 ${className || ''}`;
 };
 
-const Form = (props: FormProps) => {
+export const Form = (props: FormProps) => {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
