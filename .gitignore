@@ -56,3 +56,5 @@ Thumbs.db
 coverage/
 
 stats.html
+
+*storybook.log

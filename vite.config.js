@@ -12,6 +12,11 @@ export default defineConfig({
       outputDir: 'dist', // Output the .d.ts files to the dist folder
     }),
   ],
+  resolve: {
+    alias: {
+      '@src': path.resolve(__dirname, 'src'),
+    },
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'), // Point to your library's TypeScript entry file
