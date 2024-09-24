@@ -1,5 +1,5 @@
-import { ButtonVariant, Color } from './types';
-import { bgColor } from './utils';
+import { ButtonVariant, Color } from '@src/types';
+import { bgColor } from '@src/utils';
 
 type ButtonStateProps = {
   className?: string;
