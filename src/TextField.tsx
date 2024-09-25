@@ -2,7 +2,7 @@ import React, { useState, HTMLInputTypeAttribute } from 'react';
 
 import { groupFocusBorderColor, groupFocusTextColor } from './css-classes';
 import { Color, Size } from './types';
-import Button from './Button';
+import { Button } from '@src/Button';
 import Icon, { IconProps } from './Icon';
 import Text from './Text';
 

@@ -1,5 +1,5 @@
-import Text from './Text';
-import { Size } from './types';
+import Text from '@src/Text';
+import { Size } from '@src/types';
 
 type ButtonTextProps = {
   size?: Size;

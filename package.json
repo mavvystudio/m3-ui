@@ -14,7 +14,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prettier": "npx prettier **/* --write",
+    "prepare": "husky"
   },
   "keywords": [
     "react",
@@ -46,7 +48,10 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "eslint-plugin-storybook": "^0.8.0",
     "globals": "^15.9.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "postcss": "^8.4.47",
+    "prettier": "^3.0.3",
     "semantic-release": "^21.1.1",
     "storybook": "^8.3.2",
     "tailwindcss": "^3.3.2",

@@ -1,4 +1,4 @@
-import Button from './Button';
+import { Button } from './Button';
 import Text from './Text';
 import { Color } from './types';
 

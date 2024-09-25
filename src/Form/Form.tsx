@@ -1,52 +1,80 @@
 import { FormEvent } from 'react';
-import TextField from '../TextField';
-import { Color } from '../types';
+import TextField, { type TextFieldProps } from '@src/TextField';
+import { Color } from '@src/types';
+import { generateCls } from './helpers';
 
-type Value = string | number | boolean;
+export type CustomFieldProps = {
+  onChange: (value: FormFieldValue, key: string) => void;
+  itemKey: string;
+  value: FormFieldValue;
+};
 
-export type FormProps = {
-  fields: {
-    key: string;
-    label?: string;
-    type?: string;
-  }[];
-  value: { [k: string]: string };
-  onChange: (key: string, value: Value) => void;
+export type FormFieldValue =
+  | string
+  | number
+  | boolean
+  | null
+  | undefined
+  | { [k: string]: FormFieldValue };
+
+export type FormField = {
+  key: string;
+  Field?: React.ComponentType<CustomFieldProps> | React.FC<CustomFieldProps>;
+} & Omit<TextFieldProps, 'onChange'>;
+
+export type FormProps<T> = {
+  fields: FormField[];
+  value: T;
+  onChange: (key: keyof T, value: FormFieldValue) => void;
   onSubmit: () => void;
   className?: string;
   color?: Color;
 } & React.PropsWithChildren;
 
-const generateCls = (className?: string) => {
-  return `flex flex-col gap-y-4 ${className || ''}`;
-};
-
-export const Form = (props: FormProps) => {
+export const Form = <T extends { [k: string]: FormFieldValue }>({
+  onSubmit,
+  children,
+  fields,
+  value,
+  onChange,
+  color,
+  className,
+}: FormProps<T>) => {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
-    props.onSubmit();
+    onSubmit();
   };
 
   const getValue = (key: string) => {
-    return props.value[key];
+    return value[key];
   };
 
-  const handleChange = (key: string, value: Value) => {
-    props.onChange(key, value);
+  const handleChange = (key: keyof T, value: FormFieldValue) => {
+    onChange(key, value);
   };
 
-  const cls = generateCls(props.className);
+  const cls = generateCls(className);
 
   return (
     <form className={cls} onSubmit={handleSubmit}>
-      {props.fields.map((item) => {
+      {fields.map((item) => {
         const { key, ...fieldProps } = item;
         const value = getValue(item.key);
 
+        if (item.Field) {
+          return (
+            <item.Field
+              itemKey={item.key}
+              onChange={(fieldValue) => handleChange(item.key, fieldValue)}
+              value={value}
+            />
+          );
+        }
+
         return (
           <TextField
-            color={props.color}
+            color={color}
             {...fieldProps}
             key={item.key}
             onChange={(event) => handleChange(item.key, event)}
@@ -54,8 +82,7 @@ export const Form = (props: FormProps) => {
           />
         );
       })}
-
-      {props.children}
+      {children}
     </form>
   );
 };

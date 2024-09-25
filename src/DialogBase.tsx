@@ -1,4 +1,4 @@
-import Button from './Button';
+import { Button } from './Button';
 import Card from './Card';
 import Text from './Text';
 

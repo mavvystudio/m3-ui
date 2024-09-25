@@ -1,14 +1,14 @@
 import { CSSProperties, PropsWithChildren } from 'react';
 
-import { ButtonVariant, Color, Size } from './types';
+import { ButtonVariant, Color, Size } from '@src/types';
 import {
   createElevated,
   createFilled,
   createOutlined,
   getDirection,
   getTextColor,
-} from './utils';
-import { Icon, IconProps } from './Icon';
+} from '@src/utils';
+import { Icon, IconProps } from '@src/Icon';
 import ButtonText from './ButtonText';
 import ButtonState from './ButtonState';
 
@@ -150,14 +150,17 @@ export const Button = ({
   variant = 'text',
   size = 'medium',
   textClassName = '',
+  icon,
   iconClassName = '',
+  iconVariant,
   stateClassName = '',
   className = '',
   buttonAttrs = {},
   textAttrs = {},
+  style,
   ...props
 }: ButtonProps) => {
-  const hasIcon = props.icon !== undefined;
+  const hasIcon = Boolean(icon);
   const direction = getDirection(props.vertical, props.reversed);
   const padding = createButtonPaddingSize(props, variant, size);
   const radius = createRadius(props, variant, size);
@@ -170,8 +173,8 @@ export const Button = ({
 
   return (
     <button
-      {...buttonAttrs}
-      style={props.style}
+      {...props}
+      style={style}
       className={containerCls}
       disabled={props.disabled}
       onClick={props.onClick}
@@ -181,9 +184,9 @@ export const Button = ({
           fontVariant="title"
           size={size}
           className={iconCls}
-          variant={props.iconVariant}
+          variant={iconVariant}
         >
-          {props.icon}
+          {icon}
         </Icon>
       )}
       <ButtonText

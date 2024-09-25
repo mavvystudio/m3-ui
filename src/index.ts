@@ -11,7 +11,8 @@ export {
 export { Dialog, type DialogProps } from './Dialog';
 export { DialogBase, type DialogBaseProps } from './DialogBase';
 export { Divider } from './Divider';
-export { Form, type FormProps } from './Form';
+export { Form } from './Form';
+export type { FormProps, FormField } from './Form';
 export { Icon, type IconProps } from './Icon';
 export { LinearProgress, type LinearProgressProps } from './LinearProgress';
 export { Menu } from './Menu';
