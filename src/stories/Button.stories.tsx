@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import { Button } from '@src/Button';
+import { Button} from '@src/Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta = {
@@ -15,7 +15,7 @@ const meta: Meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    color: { 
+    color: {
       control: 'select',
       options: ['primary', 'secondary', 'tertiary'],
     },

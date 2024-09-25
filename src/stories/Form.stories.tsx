@@ -1,7 +1,8 @@
-import type { Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
 import { Form } from '@src/Form';
+import { Button } from '@src/Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta = {
@@ -15,13 +16,13 @@ const meta: Meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    value: { 
+    value: {
       control: 'object',
     },
-    fields: { 
+    fields: {
       control: 'object',
     },
-    color: { 
+    color: {
       control: 'select',
       options: ['primary', 'secondary', 'tertiary'],
     },
@@ -39,7 +40,13 @@ const meta: Meta = {
 
 export const Template: StoryObj<typeof Form> = {
   render: (args) => {
-    return <Form {...args}><button type='submit'>Submit</button></Form>
+    return (
+      <Form {...args}>
+        <Button color="primary" variant="filled" type="submit">
+          Submit
+        </Button>
+      </Form>
+    );
   },
 };
 
