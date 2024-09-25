@@ -1,6 +1,13 @@
 import { FormEvent } from 'react';
 import TextField, { type TextFieldProps } from '@src/TextField';
 import { Color } from '@src/types';
+import { generateCls } from './helpers';
+
+export type CustomFieldProps = {
+  onChange: (value: FormFieldValue, key: string) => void;
+  itemKey: string;
+  value: FormFieldValue;
+};
 
 export type FormFieldValue =
   | string
@@ -12,20 +19,17 @@ export type FormFieldValue =
 
 export type FormField = {
   key: string;
+  Field?: React.ComponentType<CustomFieldProps> | React.FC<CustomFieldProps>;
 } & Omit<TextFieldProps, 'onChange'>;
 
 export type FormProps<T> = {
   fields: FormField[];
   value: T;
-  onChange: (key: string, value: FormFieldValue) => void;
+  onChange: (key: keyof T, value: FormFieldValue) => void;
   onSubmit: () => void;
   className?: string;
   color?: Color;
 } & React.PropsWithChildren;
-
-const generateCls = (className?: string) => {
-  return `flex flex-col gap-y-4 ${className || ''}`;
-};
 
 export const Form = <T extends { [k: string]: FormFieldValue }>({
   onSubmit,
@@ -46,7 +50,7 @@ export const Form = <T extends { [k: string]: FormFieldValue }>({
     return value[key];
   };
 
-  const handleChange = (key: string, value: FormFieldValue) => {
+  const handleChange = (key: keyof T, value: FormFieldValue) => {
     onChange(key, value);
   };
 
@@ -57,6 +61,16 @@ export const Form = <T extends { [k: string]: FormFieldValue }>({
       {fields.map((item) => {
         const { key, ...fieldProps } = item;
         const value = getValue(item.key);
+
+        if (item.Field) {
+          return (
+            <item.Field
+              itemKey={item.key}
+              onChange={(fieldValue) => handleChange(item.key, fieldValue)}
+              value={value}
+            />
+          );
+        }
 
         return (
           <TextField

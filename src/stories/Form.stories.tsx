@@ -3,6 +3,18 @@ import { fn } from '@storybook/test';
 
 import { Form } from '@src/Form';
 import { Button } from '@src/Button';
+import { TextField } from '..';
+import { FormFieldValue, type CustomFieldProps } from '@src/Form/Form';
+import { useState } from 'react';
+
+const CustomField = ({ itemKey, onChange, value }: CustomFieldProps) => {
+  return (
+    <div className="p-8">
+      <p>{itemKey}:</p>
+      <TextField value={value} onChange={(event) => onChange(event, itemKey)} />
+    </div>
+  );
+};
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta = {
@@ -33,18 +45,34 @@ const meta: Meta = {
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {
     onSubmit: fn(),
-    fields: [],
+    fields: [
+      {
+        key: 'fooBar',
+        label: 'Foo Bar',
+        Field: CustomField,
+      },
+    ],
     value: {},
   },
 } satisfies Meta<typeof Form>;
 
+type FormValue = {
+  fooBar: string;
+};
 export const Template: StoryObj<typeof Form> = {
   render: (args) => {
+    const [value, setValue] = useState<FormValue>({ fooBar: '' });
+    const handleChange = (key: keyof FormValue, fieldValue: FormFieldValue) => {
+      setValue({
+        [key]: fieldValue as string,
+      });
+    };
     return (
-      <Form {...args}>
+      <Form<FormValue> {...args} onChange={handleChange} value={value}>
         <Button color="primary" variant="filled" type="submit">
           Submit
         </Button>
+        <p>foobar: {value.fooBar}</p>
       </Form>
     );
   },
