@@ -45,21 +45,59 @@ const meta: Meta = {
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {
     onSubmit: fn(),
-    fields: [
-      {
-        key: 'fooBar',
-        label: 'Foo Bar',
-        Field: CustomField,
-      },
-    ],
     value: {},
   },
 } satisfies Meta<typeof Form>;
 
+export default meta;
+
 type FormValue = {
   fooBar: string;
 };
-export const Template: StoryObj<typeof Form> = {
+
+type LoginFormValue = {
+  username: string;
+  password: string;
+};
+
+export const Default: StoryObj<typeof Form> = {
+  render: (args) => {
+    const [value, setValue] = useState<LoginFormValue>({
+      username: '',
+      password: '',
+    });
+    const handleChange = (
+      key: keyof LoginFormValue,
+      fieldValue: FormFieldValue,
+    ) => {
+      setValue((prev) => ({
+        ...prev,
+        [key]: fieldValue,
+      }));
+    };
+
+    return (
+      <Form<LoginFormValue> {...args} onChange={handleChange} value={value}>
+        <Button color="primary" variant="filled" type="submit">
+          Submit
+        </Button>
+      </Form>
+    );
+  },
+  args: {
+    fields: [
+      { key: 'username', label: 'Username', placeholder: 'Username' },
+      {
+        key: 'password',
+        label: 'Password',
+        placeholder: 'Password',
+        type: 'password',
+      },
+    ],
+  },
+};
+
+export const CustomComponentField: StoryObj<typeof Form> = {
   render: (args) => {
     const [value, setValue] = useState<FormValue>({ fooBar: '' });
     const handleChange = (key: keyof FormValue, fieldValue: FormFieldValue) => {
@@ -72,10 +110,16 @@ export const Template: StoryObj<typeof Form> = {
         <Button color="primary" variant="filled" type="submit">
           Submit
         </Button>
-        <p>foobar: {value.fooBar}</p>
       </Form>
     );
   },
+  args: {
+    fields: [
+      {
+        key: 'fooBar',
+        label: 'Foo Bar',
+        Field: CustomField,
+      },
+    ],
+  },
 };
-
-export default meta;
