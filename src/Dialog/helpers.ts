@@ -15,12 +15,8 @@ export const createEl = ({
 
   const div = document.createElement('div');
 
-  if (presentationClassName) {
-    div.classList.add(presentationClassName);
-  }
-
   div.setAttribute('id', DIALOG_ELEMENT_ID);
-  div.setAttribute('class', 'fixed inset-0 z-40');
+  div.setAttribute('class', `fixed inset-0 z-40 ${presentationClassName}`);
 
   document.body.append(div);
 
