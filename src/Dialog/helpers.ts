@@ -1,6 +1,10 @@
 import { DIALOG_ELEMENT_ID } from './constants';
 
-export const createEl = () => {
+export const createEl = ({
+  presentationClassName,
+}: {
+  presentationClassName?: string;
+}) => {
   document.body.classList.add('overflow-hidden');
 
   const target = document.getElementById(DIALOG_ELEMENT_ID);
@@ -10,6 +14,10 @@ export const createEl = () => {
   }
 
   const div = document.createElement('div');
+
+  if (presentationClassName) {
+    div.classList.add(presentationClassName);
+  }
 
   div.setAttribute('id', DIALOG_ELEMENT_ID);
   div.setAttribute('class', 'fixed inset-0 z-40');

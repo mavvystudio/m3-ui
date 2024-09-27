@@ -7,9 +7,11 @@ import { DIALOG_ELEMENT_ID } from './constants';
 
 export type DialogProps = DialogBaseProps & {
   open: boolean;
+  presentationClassName?: string;
 };
 
 export const Dialog = ({
+  presentationClassName = '',
   titleClassName = '',
   closeButtonClassName = '',
   cardClassName = '',
@@ -33,7 +35,7 @@ export const Dialog = ({
 
   const el = useMemo(() => {
     if (open) {
-      return createEl();
+      return createEl({ presentationClassName });
     }
     return null;
   }, [open]);
