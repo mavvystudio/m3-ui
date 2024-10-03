@@ -42,7 +42,6 @@ export const Form = <T extends { [k: string]: FormFieldValue }>({
 }: FormProps<T>) => {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-
     onSubmit();
   };
 
