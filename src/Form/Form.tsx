@@ -65,6 +65,7 @@ export const Form = <T extends { [k: string]: FormFieldValue }>({
         if (item.Field) {
           return (
             <item.Field
+              key={item.key}
               itemKey={item.key}
               onChange={(fieldValue) => handleChange(item.key, fieldValue)}
               value={value}
