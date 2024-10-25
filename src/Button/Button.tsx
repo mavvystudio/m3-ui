@@ -151,6 +151,7 @@ export const Button = ({
   size = 'medium',
   textClassName = '',
   icon,
+  iconButton,
   iconClassName = '',
   iconVariant,
   stateClassName = '',
@@ -164,7 +165,7 @@ export const Button = ({
   const direction = getDirection(props.vertical, props.reversed);
   const padding = createButtonPaddingSize(props, variant, size);
   const radius = createRadius(props, variant, size);
-  const minWidth = props.iconButton ? '' : 'min-w-100';
+  const minWidth = iconButton ? '' : 'min-w-100';
   const pos = variant === 'fab' ? 'absolute' : 'relative';
   const buttonCls = `${cls} ${radius} ${padding} ${direction} ${pos} ${className} ${minWidth}`;
   const renderedCls = createVariantCls(variant, props);
@@ -189,11 +190,7 @@ export const Button = ({
           {icon}
         </Icon>
       )}
-      <ButtonText
-        className={textClassName}
-        size={size}
-        iconButton={props.iconButton}
-      >
+      <ButtonText className={textClassName} size={size} iconButton={iconButton}>
         {props.children}
       </ButtonText>
       <ButtonState

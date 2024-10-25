@@ -22,6 +22,7 @@ export type FieldComponentProps = {
     top?: boolean;
     disableRemoveOverflow?: boolean;
     noOptionText?: string;
+    showClearButton?: boolean;
   };
 };
 
@@ -132,7 +133,7 @@ const SelectFieldComponent = (props: FieldComponentProps) => {
           value={cv}
           onKeyDown={handleInputKeyDown}
         />
-        {hasValue && (
+        {hasValue && props.options.showClearButton !== false && (
           <Button
             onClick={(event) => {
               event.preventDefault();
