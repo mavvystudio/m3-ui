@@ -329,7 +329,7 @@ function TrailingIcon(
     hasTrailingIcon: boolean;
   },
 ) {
-  if (!props.hasTrailingIcon) {
+  if (!props.hasTrailingIcon || !props.showClearButton) {
     return null;
   }
   const cls = `${props.className} !px-1 !py-0`;
