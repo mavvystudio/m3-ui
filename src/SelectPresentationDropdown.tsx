@@ -109,7 +109,7 @@ const SelectPresentationDropdown = forwardRef(function SP(
     <Card
       style={style}
       ref={cardEl}
-      className="m3-select-card absolute animate-dropdown opacity-0 px-0 rounded-lg origin-top z-[90]"
+      className="m3-select-card absolute animate-dropdown opacity-0 px-0 rounded-lg origin-top z-[90] !p-0"
     >
       <ul className="max-h-32 overflow-y-scroll" ref={ulEl}>
         {props.options.map((item, index) => {
