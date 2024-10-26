@@ -23,15 +23,17 @@ export type FormField = {
 } & Omit<TextFieldProps, 'onChange'>;
 
 export type FormProps<T> = {
+  action?: string;
   fields: FormField[];
   value: T;
   onChange: (key: keyof T, value: FormFieldValue) => void;
-  onSubmit: () => void;
+  onSubmit?: () => void;
   className?: string;
   color?: Color;
 } & React.PropsWithChildren;
 
 export const Form = <T extends { [k: string]: FormFieldValue }>({
+  action,
   onSubmit,
   children,
   fields,
@@ -42,7 +44,7 @@ export const Form = <T extends { [k: string]: FormFieldValue }>({
 }: FormProps<T>) => {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    onSubmit();
+    onSubmit?.();
   };
 
   const getValue = (key: string) => {
@@ -56,7 +58,7 @@ export const Form = <T extends { [k: string]: FormFieldValue }>({
   const cls = generateCls(className);
 
   return (
-    <form className={cls} onSubmit={handleSubmit}>
+    <form action={action} className={cls} onSubmit={handleSubmit}>
       {fields.map((item) => {
         const { key, ...fieldProps } = item;
         const value = getValue(item.key);
