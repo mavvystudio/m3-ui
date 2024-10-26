@@ -1,6 +1,6 @@
 {
   "name": "@mavvy/m3-ui",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "description": "Material 3 UI React and Tailwind",
   "type": "module",
   "main": "dist/m3-ui.umd.js",
